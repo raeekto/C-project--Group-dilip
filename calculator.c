@@ -1,7 +1,19 @@
-//Calculator App
+// Calculator App
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
+#include <windows.h> // for sleep()
+
+// Clear previous output
+static void clear_screen(void)
+{
+#ifdef _WIN32
+	system("cls"); // Windows
+#else
+	printf("\033[H\033[J"); // ANSI escape codes for Linux/macOS
+#endif
+}
 
 int main()
 {
@@ -16,6 +28,7 @@ int main()
 
 	while (chVal)
 	{
+		clear_screen();
 		// Menu of operators
 		printf("\n\t\t------------------------------\n");
 		printf("\t\t1.) ADD (+)\n\t\t2.) SUBTRACT (-)\n\t\t3.) MULTIPLICATION (*)\n\t\t4.) DIVISION (/)\n\t\t5.) REMAINDER (%%)");
@@ -26,7 +39,6 @@ int main()
 		scanf(" %c", &op);
 
 		bool opVal = false;
-		// Check op is fall under opOptions or not
 		// int i; // // (when loop initial declaration not allow)
 		for (int i = 0; i < sizeOfOp; i++)
 		{
@@ -40,6 +52,7 @@ int main()
 		if (!opVal)
 		{
 			printf("Can choose only (+, -, *, /, %%)\n");
+			Sleep(1500); // 1000m = 1s
 			continue;
 		}
 
