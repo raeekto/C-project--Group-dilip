@@ -1,4 +1,4 @@
-// TIC-TAC-TOE(with computer or friend)
+// TIC-TAC-TOE(player VS computer or friend VS friend)
 
 // Headers declaration
 #include <stdio.h>

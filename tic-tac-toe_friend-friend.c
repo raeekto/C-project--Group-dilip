@@ -1,4 +1,4 @@
-// TIC-TAC-TOE game in C
+// TIC-TAC-TOE (friend VS friend)
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
